@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="man.jpg">
+<img src="man.jpg"/><small style="color: white">by user <b><i style="color: green">h66880885@gmail.com</i></b></small><hr />
+		<!--Masukkan css java-script python dan bahasa pemrograman lainnya di sini-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+			
+			background-image: url('download.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tebak Nama Batu</h1>
+    <p>Kami telah memilih sebuah nama batu. Silakan tebak!</p>
+    <input type="text" id="guess" placeholder="Masukkan nama batu">
+    <button onclick="checkGuess()">Tebak</button>
+    <p id="message"></p>
+
+    <script>
+        var batu = ['Kuarsa', 'Obsidian', 'Koral', 'Basal', 'Batu pasir', 'Batu Kapur', 'Batu Dendrit'];
+        var batuTerpilih = batu[Math.floor(Math.random() * batu.length)];
+
+        function checkGuess() {
+            var guess = document.getElementById('guess').value;
+            var message = '';
+
+            if (guess.toLowerCase() === batuTerpilih) {
+                message = 'Selamat! Anda berhasil menebak nama batu.';
+                batuTerpilih = batu[Math.floor(Math.random() * batu.length)];
+            } else {
+                message = 'Maaf, tebakan Anda salah. Coba lagi.';
+            }
+
+            document.getElementById('message').innerText = message;
+        }
+    </script>
+	<button><p>&copy Copyright by user <b><i style="color: green">h66880885@gmail.com</i></b></p></button>
+</body>
+</html>
